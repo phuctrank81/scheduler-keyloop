@@ -6,6 +6,8 @@ const get = async () => {
   
 }
 
+
+const NAV = ['Dashboard', 'Your appointment', 'Vehicles', 'Profile', 'Settings', 'Sign out'];
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
