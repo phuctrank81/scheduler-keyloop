@@ -1,17 +1,59 @@
-import Image from "next/image";
+import { BACKEND_URL } from '@/lib/proxy';
+import type { Customer, Dealership, ServiceBay, ServiceType, Technician, Vehicle } from '@/lib/scheduling';
+import AppShell from '@/components/AppShell';
+import BookingForm from '@/components/BookingForm';
 
-// Force the page to be dynamically rendered on every request instead of being statically generated.
-const dynamic = "force-dynamic";
-const get = async () => {
-  
-}
+export const dynamic = 'force-dynamic';
 
+const get = async <T,>(path: string): Promise<T> => {
+  const response = await fetch(`${BACKEND_URL}/${path}`, { cache: 'no-store' });
+  if (!response.ok) throw new Error(path);
+  return response.json();
+};
 
-const NAV = ['Dashboard', 'Your appointment', 'Vehicles', 'Profile', 'Settings', 'Sign out'];
-export default function Home() {
+type PageData = {
+  dealerships: Dealership[];
+  customer: Customer;
+  vehicles: Vehicle[];
+  serviceTypes: ServiceType[];
+  bays: ServiceBay[];
+  technicians: Technician[];
+};
+
+const getCustomerInitials = (name: string): string =>
+  name.split(' ').filter(Boolean).map((word) => word[0]).join('').slice(0, 2);
+
+export default async function Page() {
+  let data: PageData | null = null;
+
+  try {
+    const [dealerships, customers, vehicles, serviceTypes, bays, technicians] = await Promise.all([
+      get<Dealership[]>('dealerships'),
+      get<Customer[]>('customers'),
+      get<Vehicle[]>('vehicles'),
+      get<ServiceType[]>('serviceTypes'),
+      get<ServiceBay[]>('bays'),
+      get<Technician[]>('technicians'),
+    ]);
+
+    data = { dealerships, customer: customers[0], vehicles, serviceTypes, bays, technicians };
+  } catch {
+    data = null;
+  }
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-24">
-
-    </div>
+    <AppShell title="Appointment Booking" activeNav="dashboard" showPromo headerRight={data ? (
+      <div className="who">
+        <span className="avatar" aria-hidden>{getCustomerInitials(data.customer.name)}</span>
+        {data.customer.name}
+      </div>
+    ) : undefined}>
+      <section className="card" id="book" aria-labelledby="book-h">
+        <h2 id="book-h">Book appointment</h2>
+        {data ? <BookingForm {...data} /> : (
+          <p className="empty">The scheduling service did not respond. Start it with <code>npm run mock</code> and refresh.</p>
+        )}
+      </section>
+    </AppShell>
   );
 }
