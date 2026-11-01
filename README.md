@@ -1,5 +1,42 @@
 # Appointment Scheduler — System Design Document
 
+## Quick start
+
+### Prerequisites
+- Node.js 20+
+- npm 10+
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run the app locally
+```bash
+npm run dev
+```
+This starts the mock backend and the Next.js app together. The UI is available at http://localhost:3000 and the mock API runs on http://localhost:3101 by default.
+
+### Production build
+```bash
+npm run build
+```
+
+### Run the business-logic test suite
+```bash
+npm test
+```
+
+## AI Collaboration Narrative
+
+Our strategy for guiding the AI was to keep the work scoped to the core scheduling domain and to validate every change with deterministic checks. We treated `lib/scheduling.ts` as the source of truth for availability and booking rules, and we used the test suite in `tests/scheduling.test.ts` as the guardrail for correctness.
+
+The workflow was intentionally incremental: first confirm the bug or requirement, second isolate the smallest file or function involved, then apply a surgical fix and re-run the relevant tests. That reduced the risk of side effects and made it easier to confirm whether a change actually solved the problem.
+
+We also verified output at multiple layers: unit tests for the scheduling engine, a production build for the Next.js app, and a local runtime check for the app startup. This gave confidence that the code was not only correct in isolation, but also still integrated properly in the real application flow.
+
+Finally, the quality bar was enforced by keeping the business logic pure and deterministic, documenting assumptions in the README, and ensuring the final result still passed the project checks before completion.
+
 ## 1. Overview
 
 This system is an appointment-booking platform for a dealership service center. The primary business requirement is to allow a customer to pick a service, vehicle, dealership, and time slot, then reserve an appointment only when both a valid service bay and a qualified technician are free for the full duration of the job.

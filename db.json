@@ -222,7 +222,7 @@
     },
     {
       "id": "t4",
-      "dealershipId": "d4",
+      "dealershipId": "d2",
       "name": "Phuc Tran",
       "skills": [
         "service",
@@ -344,7 +344,7 @@
       "bayId": "b1",
       "startTime": "2026-11-02T09:00:00.000Z",
       "endTime": "2026-11-02T10:00:00.000Z",
-      "status": "CONFIRMED",
+      "status": "CANCELLED",
       "createdAt": "2026-10-31T12:26:52.619Z",
       "correlationId": "61573739-631e-4a78-b9b0-4e5dbc75b7c5",
       "idempotencyKey": "c78108d5-f966-4ade-af1e-72035c20faac"

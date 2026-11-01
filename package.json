@@ -9,6 +9,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "vitest run",
     "mock": "tsx server/mock-server.ts"
   },
   "dependencies": {
