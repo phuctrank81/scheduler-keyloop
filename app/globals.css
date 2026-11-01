@@ -412,6 +412,31 @@ dd {
   font-weight: 600;
 }
 
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--blue);
+  font-weight: 700;
+  margin: 0;
+}
+
+.loading::before {
+  content: "";
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(11, 90, 148, .22);
+  border-top-color: var(--blue);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .empty {
   color: var(--bad);
 }

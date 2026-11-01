@@ -219,6 +219,28 @@
           "end": "17:00"
         }
       ]
+    },
+    {
+      "id": "t4",
+      "dealershipId": "d4",
+      "name": "Phuc Tran",
+      "skills": [
+        "service",
+        "brakes"
+      ],
+      "shifts": [
+        {
+          "days": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "start": "08:00",
+          "end": "16:00"
+        }
+      ]
     }
   ],
   "appointments": [
@@ -446,6 +468,171 @@
       "createdAt": "2026-10-31T12:49:23.851Z",
       "correlationId": "d400f6c4-acbb-4d05-a600-ff00042e38c7",
       "idempotencyKey": "f0ff7a85-aa68-409d-83b4-0a411ccaa96d"
+    },
+    {
+      "id": "a21bf63e-0766-420e-b0c3-c26e7b80948b",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d1",
+      "serviceTypeId": "s3",
+      "technicianId": "t2",
+      "bayId": "b2",
+      "startTime": "2026-11-03T08:00:00.000Z",
+      "endTime": "2026-11-03T11:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:37:51.226Z",
+      "correlationId": "e92c049d-83a5-4c76-afb6-9214dab36961",
+      "idempotencyKey": "fd121645-c40b-4619-9a27-1e9625d6808d"
+    },
+    {
+      "id": "466d9bf0-77de-445f-8cf4-544eece3c76b",
+      "customerId": "c1",
+      "vehicleId": "v4",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-03T08:00:00.000Z",
+      "endTime": "2026-11-03T11:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:39:46.854Z",
+      "correlationId": "acdb1283-45a8-49b9-9830-7729f9809bfc",
+      "idempotencyKey": "989e2271-73de-4d10-a893-facfbce705e4"
+    },
+    {
+      "id": "5a6ca74e-5560-4cce-b5b6-8c9585e54ca6",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s1",
+      "technicianId": "t3",
+      "bayId": "b3",
+      "startTime": "2026-11-02T09:00:00.000Z",
+      "endTime": "2026-11-02T10:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:40:38.371Z",
+      "correlationId": "cb1c4111-1a4f-4333-a30a-c393e31c16c3",
+      "idempotencyKey": "f0bd05f4-c1b8-482f-8d48-6d77413d692d"
+    },
+    {
+      "id": "e9a76b91-ddbc-4b12-a308-27387ac7abd8",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-02T10:00:00.000Z",
+      "endTime": "2026-11-02T13:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:43:43.830Z",
+      "correlationId": "3d5d34f3-8fa0-49c7-8947-f8dcda8489f5",
+      "idempotencyKey": "0f7efdbe-38b9-4808-93ad-105dca4c0888"
+    },
+    {
+      "id": "d05f37a6-a3fa-440b-b3ac-2a247435a5ba",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-02T13:00:00.000Z",
+      "endTime": "2026-11-02T16:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:44:32.583Z",
+      "correlationId": "b0df670e-3aa6-401d-901e-41ad4f19c572",
+      "idempotencyKey": "00299b4a-d2a2-46c7-af62-835798c19011"
+    },
+    {
+      "id": "d9aa259a-d67b-4c9b-bb33-201acffba714",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-03T11:00:00.000Z",
+      "endTime": "2026-11-03T14:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:46:39.575Z",
+      "correlationId": "33874f2d-c407-4f01-aa9b-83961d3e643c",
+      "idempotencyKey": "5272e22b-e313-42f0-9ded-1ac66cab5f25"
+    },
+    {
+      "id": "7e7ffaa1-2443-4418-8e1c-619cb1089527",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-03T14:00:00.000Z",
+      "endTime": "2026-11-03T17:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:48:51.424Z",
+      "correlationId": "1d7141b0-93bd-453b-8f3f-e5b7a4de0fa0",
+      "idempotencyKey": "db8b8571-d3fd-4f17-9487-e5aed5e61481"
+    },
+    {
+      "id": "c3c17ab7-0c08-47d5-b1e9-3987da397979",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d1",
+      "serviceTypeId": "s1",
+      "technicianId": "t1",
+      "bayId": "b1",
+      "startTime": "2026-11-04T10:00:00.000Z",
+      "endTime": "2026-11-04T11:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:50:16.289Z",
+      "correlationId": "3bb526ed-fe6d-47f1-8237-5a1766cb8905",
+      "idempotencyKey": "81822cc0-bbac-4770-b43c-9a4f7c95dffd"
+    },
+    {
+      "id": "45402731-97bc-4559-894f-fc1beda1dd7d",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-04T08:00:00.000Z",
+      "endTime": "2026-11-04T11:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:54:46.591Z",
+      "correlationId": "b166e376-a174-4230-aef5-8d01658fa455",
+      "idempotencyKey": "e37c99eb-e00f-4884-a9b0-9a3b9b87405e"
+    },
+    {
+      "id": "809e9a87-140c-4b86-85a8-9d4872f6f751",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d1",
+      "serviceTypeId": "s3",
+      "technicianId": "t1",
+      "bayId": "b2",
+      "startTime": "2026-11-03T11:00:00.000Z",
+      "endTime": "2026-11-03T14:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:57:28.427Z",
+      "correlationId": "f525f1c3-095c-451c-a4a5-ea8fe0ebb3fa",
+      "idempotencyKey": "afb78a04-a5d6-45b2-a6a7-3d85bcd310f2"
+    },
+    {
+      "id": "d668f518-3af0-412f-88dc-ef2baec444c4",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d1",
+      "serviceTypeId": "s1",
+      "technicianId": "t1",
+      "bayId": "b1",
+      "startTime": "2026-11-04T12:30:00.000Z",
+      "endTime": "2026-11-04T13:30:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T08:59:31.543Z",
+      "correlationId": "2ec39bc6-63fd-4c01-a6c2-55047b7de508",
+      "idempotencyKey": "01685f7a-a29a-4495-8e76-9095948fcc69"
     }
   ]
 }

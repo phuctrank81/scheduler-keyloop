@@ -1,6 +1,6 @@
 // Server-side helper used by the Next.js Route Handlers (BFF): validates nothing about
 // business rules, just forwards to the mock backend with the tracing headers attached.
-export const BACKEND_URL = process.env.BACKEND_URL ?? 'http://localhost:3001';
+export const BACKEND_URL = process.env.BACKEND_URL ?? 'http://localhost:3101';
 const TRACE_HEADERS = ['x-correlation-id', 'idempotency-key'] as const;
 
 export async function forward(req: Request, path: string, method: string): Promise<Response> {

@@ -98,7 +98,16 @@ export default function BookingForm({ customer, dealerships, vehicles, serviceTy
       });
       const body = await r.json();
       if (r.ok) {
-        router.push(`/appointments/${body.id}`);
+        const params = new URLSearchParams({
+          success: '1',
+          customerId: customer.id,
+          vehicleId,
+          dealershipId,
+          serviceTypeId,
+          startTime: slot,
+          technicianId: selectedTechnicianId || '',
+        });
+        router.push(`/appointments?${params.toString()}`);
         return;
       }
       if (r.status === 409) { setError('Someone just took that time. Pick another slot.'); setSlot(''); setReload((n) => n + 1); }

@@ -1,8 +1,10 @@
-import { Suspense } from 'react';
 import { BACKEND_URL } from '@/lib/proxy';
 import type { Customer, Dealership, ServiceBay, ServiceType, Technician, Vehicle } from '@/lib/scheduling';
 import AppShell from '@/components/AppShell';
 import BookingForm from '@/components/BookingForm';
+
+export const dynamic = 'force-dynamic';
+
 
 const get = async <T,>(path: string): Promise<T> => {
   const response = await fetch(`${BACKEND_URL}/${path}`, { cache: 'no-store' });
@@ -22,7 +24,7 @@ type PageData = {
 const getCustomerInitials = (name: string): string =>
   name.split(' ').filter(Boolean).map((word) => word[0]).join('').slice(0, 2);
 
-async function BookingPageContent() {
+export default async function Page() {
   let data: PageData | null = null;
 
   try {
@@ -54,20 +56,5 @@ async function BookingPageContent() {
         )}
       </section>
     </AppShell>
-  );
-}
-
-export default function Page() {
-  return (
-    <Suspense fallback={
-      <AppShell title="Appointment Booking" activeNav="dashboard" showPromo>
-        <section className="card" id="book" aria-labelledby="book-h">
-          <h2 id="book-h">Book appointment</h2>
-          <p className="empty">Loading appointment data…</p>
-        </section>
-      </AppShell>
-    }>
-      <BookingPageContent />
-    </Suspense>
   );
 }

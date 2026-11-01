@@ -61,5 +61,13 @@ server.delete('/api/appointments/:id', (req: any, res: any) => {
 });
 
 server.use(router);
-const port = Number(process.env.MOCK_PORT ?? 3001);
+const port = Number(process.env.MOCK_PORT ?? 3101);
+server.on('error', (error: any) => {
+  if (error?.code === 'EADDRINUSE') {
+    logger.error({ event: 'server.start_failed', port, reason: 'port_in_use', message: `Port ${port} is already in use. Set MOCK_PORT to a free port.` });
+    process.exit(1);
+  }
+
+  throw error;
+});
 server.listen(port, () => logger.info({ event: 'server.started', port }));

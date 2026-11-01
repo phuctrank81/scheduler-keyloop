@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently -k \"npm run dev:mock\" \"next dev\"",
+    "dev": "node scripts/dev.mjs",
     "dev:mock": "tsx server/mock-server.ts",
     "dev:next": "next dev",
     "build": "next build",
