@@ -1,8 +1,7 @@
+import { Suspense } from 'react';
 import { BACKEND_URL } from '@/lib/proxy';
 import type { Appointment, Customer, Dealership, ServiceBay, ServiceType, Technician, Vehicle } from '@/lib/scheduling';
 import AppShell from '@/components/AppShell';
-
-export const dynamic = 'force-dynamic';
 
 const get = async <T,>(path: string): Promise<T> => {
   const response = await fetch(`${BACKEND_URL}/${path}`, { cache: 'no-store' });
@@ -15,7 +14,7 @@ const timeLabel = (iso: string, offset: number) =>
 const dateLabel = (iso: string, offset: number) =>
   new Date(Date.parse(iso) + offset * 60000).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 
-export default async function AppointmentListPage() {
+async function AppointmentListContent() {
   try {
     const [appointments, customers, dealerships, vehicles, serviceTypes, bays, technicians] = await Promise.all([
       get<Appointment[]>('appointments'),
@@ -85,4 +84,18 @@ export default async function AppointmentListPage() {
       </AppShell>
     );
   }
+}
+
+export default function AppointmentListPage() {
+  return (
+    <Suspense fallback={
+      <AppShell title="Your appointment" activeNav="appointments">
+        <section className="card">
+          <p className="empty">Loading appointments…</p>
+        </section>
+      </AppShell>
+    }>
+      <AppointmentListContent />
+    </Suspense>
+  );
 }

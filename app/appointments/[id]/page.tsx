@@ -1,9 +1,8 @@
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { BACKEND_URL } from '@/lib/proxy';
 import type { Appointment, Customer, Dealership, ServiceBay, ServiceType, Technician, Vehicle } from '@/lib/scheduling';
 import AppShell from '@/components/AppShell';
-
-export const dynamic = 'force-dynamic';
 
 const get = async <T,>(path: string): Promise<T> => {
   const response = await fetch(`${BACKEND_URL}/${path}`, { cache: 'no-store' });
@@ -16,9 +15,7 @@ const timeLabel = (iso: string, offset: number) =>
 const dateLabel = (iso: string, offset: number) =>
   new Date(Date.parse(iso) + offset * 60000).toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 
-export default async function AppointmentDetailPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
-
+async function AppointmentDetailContent({ id }: { id: string }) {
   try {
     const [appointment, customers, dealerships, vehicles, serviceTypes, bays, technicians] = await Promise.all([
       get<Appointment>(`appointments/${encodeURIComponent(id)}`),
@@ -66,4 +63,23 @@ export default async function AppointmentDetailPage({ params }: { params: Promis
   } catch {
     notFound();
   }
+}
+
+export default function AppointmentDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  return (
+    <Suspense fallback={
+      <AppShell title="Your appointment" activeNav="appointments">
+        <section className="card">
+          <p className="empty">Loading appointment…</p>
+        </section>
+      </AppShell>
+    }>
+      <AppointmentDetailPageInner params={params} />
+    </Suspense>
+  );
+}
+
+async function AppointmentDetailPageInner({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  return <AppointmentDetailContent id={id} />;
 }

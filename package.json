@@ -6,10 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "mock": "tsx server/mock-server.ts"
   },
   "dependencies": {
+    "json-server": "^0.17.4",
     "next": "16.4.3",
+    "pino": "^10.4.0",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
@@ -21,6 +24,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
+    "tsx": "^4.20.3",
     "typescript": "^5",
     "vitest": "^2.1.8"
   }
