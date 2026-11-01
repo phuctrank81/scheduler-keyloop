@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently -k \"npm run dev:mock\" \"next dev\"",
+    "dev:mock": "tsx server/mock-server.ts",
+    "dev:next": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -21,6 +23,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.1.2",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
