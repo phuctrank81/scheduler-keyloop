@@ -633,6 +633,21 @@
       "createdAt": "2026-11-01T08:59:31.543Z",
       "correlationId": "2ec39bc6-63fd-4c01-a6c2-55047b7de508",
       "idempotencyKey": "01685f7a-a29a-4495-8e76-9095948fcc69"
+    },
+    {
+      "id": "4c47eced-b786-40bb-9fcd-b9b8321f7192",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d1",
+      "serviceTypeId": "s1",
+      "technicianId": "t1",
+      "bayId": "b1",
+      "startTime": "2026-11-03T09:30:00.000Z",
+      "endTime": "2026-11-03T10:30:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-01T09:00:59.288Z",
+      "correlationId": "0195dc62-71e1-4ace-b9ea-08fa6cb70a99",
+      "idempotencyKey": "1b854f40-c84b-4cbf-ade6-a4b4f3c632bd"
     }
   ]
 }
