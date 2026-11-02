@@ -13,6 +13,7 @@
     "mock": "tsx server/mock-server.ts"
   },
   "dependencies": {
+    "express": "^5.3.0",
     "json-server": "^0.17.4",
     "next": "16.4.3",
     "pino": "^10.4.0",
@@ -25,11 +26,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "concurrently": "^9.1.2",
-    "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint": "^10.14.0",
+    "eslint-config-next": "^0.2.4",
     "tailwindcss": "^4",
     "tsx": "^4.20.3",
     "typescript": "^5",
-    "vitest": "^2.1.8"
+    "vitest": "^5.0.5"
   }
 }
