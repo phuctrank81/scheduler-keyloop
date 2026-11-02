@@ -131,11 +131,7 @@ flowchart LR
 5. A new appointment record is persisted as `CONFIRMED`.
 6. If the slot is taken by a race condition, the API responds with a conflict error and suggested alternatives.
 
-### 5.4 Cancellation
 
-1. The user cancels an appointment.
-2. The backend marks the appointment status as `CANCELLED`.
-3. The bay and technician become available again for future slots.
 
 ## 6. Core Design Decisions
 
