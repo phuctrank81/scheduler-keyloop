@@ -1,0 +1,17 @@
+flowchart LR
+    User[Customer / User Browser]
+    FE["Next.js Frontend<br/>App Router + React"]
+    BFF["Next.js Route Handlers<br/>BFF / API layer"]
+    API["Mock Backend<br/>json-server + custom scheduling routes"]
+    CORE["Scheduling Engine<br/>lib/scheduling.ts<br/>pure business rules"]
+    DB["db.json<br/>Dealerships, bays, technicians, appointments"]
+    OBS["Observability<br/>Pino logs + correlation IDs + metrics plan"]
+
+    User -->|HTTP requests| FE
+    FE -->|GET / POST / DELETE| BFF
+    BFF -->|forwarded request + headers| API
+    API --> CORE
+    CORE --> DB
+    API --> OBS
+    BFF --> OBS
+    FE --> OBS
