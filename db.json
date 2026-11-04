@@ -648,6 +648,51 @@
       "createdAt": "2026-11-01T09:00:59.288Z",
       "correlationId": "0195dc62-71e1-4ace-b9ea-08fa6cb70a99",
       "idempotencyKey": "1b854f40-c84b-4cbf-ade6-a4b4f3c632bd"
+    },
+    {
+      "id": "5488fae2-c2b8-43f5-a903-3228ad7ebe55",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t3",
+      "bayId": "b4",
+      "startTime": "2026-11-04T12:00:00.000Z",
+      "endTime": "2026-11-04T15:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-02T06:05:28.390Z",
+      "correlationId": "7b83375f-32ce-449e-aa81-8dc13440882b",
+      "idempotencyKey": "e57944d8-f39b-4395-8329-f459472a5209"
+    },
+    {
+      "id": "1c2a4974-c8fc-4daa-a4c8-37da70bbda73",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t4",
+      "bayId": "b4",
+      "startTime": "2026-11-05T08:00:00.000Z",
+      "endTime": "2026-11-05T11:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-02T06:19:16.145Z",
+      "correlationId": "57579be2-25a5-41a9-9193-89d0a79c719f",
+      "idempotencyKey": "801bb020-542e-46a3-8ca5-9f071010deea"
+    },
+    {
+      "id": "3fb162a9-5594-4600-9c7a-80bf7089b4c8",
+      "customerId": "c1",
+      "vehicleId": "v1",
+      "dealershipId": "d2",
+      "serviceTypeId": "s3",
+      "technicianId": "t4",
+      "bayId": "b4",
+      "startTime": "2026-11-05T11:00:00.000Z",
+      "endTime": "2026-11-05T14:00:00.000Z",
+      "status": "CONFIRMED",
+      "createdAt": "2026-11-02T06:42:02.520Z",
+      "correlationId": "eb07dccd-7b54-42b1-b85f-fac3c991866a",
+      "idempotencyKey": "32196ac0-1ae7-469f-85c0-84a04f09a135"
     }
   ]
 }
